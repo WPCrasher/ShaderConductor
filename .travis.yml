@@ -47,6 +47,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - clang-6.0
+            - libc++-dev
+            - libc++abi-dev
             - libstdc++-6-dev
             - ninja-build
           update:
@@ -63,7 +65,8 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - clang-7
-            - libstdc++-7-dev
+            - libc++-7-dev
+            - libc++abi-7-dev
             - ninja-build
           update:
             - true

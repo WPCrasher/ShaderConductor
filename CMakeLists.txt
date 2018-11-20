@@ -22,6 +22,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${SC_BUILD_DIR}/Lib)
 
 if((CMAKE_C_COMPILER_ID MATCHES GNU) OR (CMAKE_C_COMPILER_ID MATCHES Clang))
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1z")
+    if((CMAKE_C_COMPILER_ID MATCHES Clang) AND (${CMAKE_SYSTEM_NAME} MATCHES "Linux"))
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+    endif()
 endif()
 
 # DirectXShaderCompiler requires it
